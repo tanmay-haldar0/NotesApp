@@ -40,7 +40,7 @@ app.use("/api/notes/", notesRoutes);
 const PORT = process.env.PORT || 5000
 const frontendDistPath = path.join(__dirname, "..", "frontend", "dist");
 
-
+ 
 if(process.env.NODE_ENV === "production"){
     app.use(express.static(frontendDistPath));
 

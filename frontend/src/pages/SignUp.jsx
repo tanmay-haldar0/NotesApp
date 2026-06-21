@@ -74,8 +74,8 @@ const SignUp = () => {
     <>
       <Navbar />
 
-      <div className='flex items-center justify-center mt-28' >
-        <div className='w-96 drop-shadow rounded bg-white px-7 py-10' >
+      <div className='flex items-center justify-center mt-28 px-4'>
+        <div className='w-full max-w-md drop-shadow rounded bg-white px-6 py-10 sm:px-7' >
           <form onSubmit={handleSignup}>
             <h4 className="text-2xl mb-7">Sign Up</h4>
 
