@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import { connect_db } from './config/db.js';
 import userRoutes from "./routes/user.route.js";
 import notesRoutes from "./routes/notes.route.js";
+import healthRoutes from "./routes/health.route.js";
 import path from "path";
 
 const __filename = fileURLToPath(import.meta.url);
@@ -35,6 +36,7 @@ app.use(cors({
  
 app.use("/api/user/", userRoutes);
 app.use("/api/notes/", notesRoutes);
+app.use("/api/health/", healthRoutes);
 
 
 const PORT = process.env.PORT || 5000
