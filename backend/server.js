@@ -18,6 +18,7 @@ app.use(express.json());
 
 const allowedOrigins = [
     "http://localhost:5173",
+    "https://notesapp0-41mg.onrender.com",
 ];
 
 app.use(cors({
@@ -36,15 +37,15 @@ app.use("/api/user/", userRoutes);
 app.use("/api/notes/", notesRoutes);
 
 
-const _drname = path.resolve();
 const PORT = process.env.PORT || 5000
+const frontendDistPath = path.join(__dirname, "..", "frontend", "dist");
 
 
 if(process.env.NODE_ENV === "production"){
-    app.use(express.static(path.join(_drname, "/frontend/dist")));
+    app.use(express.static(frontendDistPath));
 
     app.get("*", (req,res) =>{
-        res.sendFile(path.resolve(_drname,"frontend","dist","index.html"));
+        res.sendFile(path.join(frontendDistPath, "index.html"));
     })
 }
 
