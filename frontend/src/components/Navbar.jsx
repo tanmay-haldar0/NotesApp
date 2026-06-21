@@ -43,16 +43,19 @@ const Navbar = ({ userInfo, onSearchNote, handleClearSearch }) => {
                 )}
             </div>
 
-            <div className="w-full">
-                <SearchBar
-                    value={searchQuery}
-                    onChange={({ target }) => setSearchQuery(target.value)}
-                    handleSearch={handleSearch}
-                    onClearSearch={onClearSearch}
-                />
-            </div>
+            {userInfo && (
+                <div className="w-full">
+                    <SearchBar
+                        value={searchQuery}
+                        onChange={({ target }) => setSearchQuery(target.value)}
+                        handleSearch={handleSearch}
+                        onClearSearch={onClearSearch}
+                    />
+                </div>
+            )}
         </div>
     )
 }
+
 
 export default Navbar
